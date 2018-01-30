@@ -71,4 +71,19 @@ public class MongoDao {
  }
 
 
+    /**
+     * 修改
+     */
+    @Test
+    public void update() throws UnknownHostException {
+        DB    db= connection();
+        DBCollection collection=db.getCollection("zhang");      //获取集合
+        BasicDBObject dbObject=new BasicDBObject();                     //特殊json
+        dbObject.put("name","李四");                            //赋值
+        DBCursor cursor= collection.find(dbObject);
+
+    }
+
+
+
 }
